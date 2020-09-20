@@ -6,6 +6,8 @@
 {{ if hugo.IsProduction }}
   {{ $styles = $styles | minify }}
 {{ end }}
-
+<!-- Yes this is gonna cause an intentional 404, I'll try and fix it later -->
 <link href=".{{ $styles.Permalink | relURL }}" rel="stylesheet" />
+<link href="../{{ $styles.Permalink | relURL }}" rel="stylesheet" />
+
 </head>
