@@ -123,8 +123,8 @@
         <tbody>
           {{ range .Site.Data.cv.skills.item }}
             <tr>
-              <td class="px-4 py-2 font-semibold">{{ .title }}</td>
-              <td class="px-4 py-2">{{ delimit .items ", " }}</td>
+              <td class="px-4 py-1 font-semibold">{{ .title }}</td>
+              <td class="px-4 py-1">{{ delimit .items ", " }}</td>
             </tr>
           {{ end }}
         </tbody>
@@ -132,9 +132,9 @@
     </section>
 
     <!-- Qualifications -->
-    <section class="pt-4">
+    <section class="pt-2">
       <h2 class="text-xl pb-1">Qualifications</h2>
-      <hr class="py-2" />
+      <hr class="py-1" />
       <div class="divide-y-4 divide-transparent">
         {{ range .Site.Data.cv.qualifications.item }}
           <div class="grid grid-cols-6 gap-x-4">
@@ -149,9 +149,9 @@
       </div>
     </section>
     <!-- Experience -->
-    <section class="pt-4">
+    <section class="pt-2">
       <h2 class="text-xl pb-1">Experience</h2>
-      <hr class="py-2" />
+      <hr class="py-1" />
       <div class="divide-y-4 divide-transparent">
         {{ range .Site.Data.cv.experience.item }}
           <div class="grid grid-cols-6 gap-x-4">
@@ -165,13 +165,13 @@
       </div>
     </section>
     <!-- Personal and Group Projects -->
-    <section class="pt-4">
+    <section class="pt-2">
       <h2 class="text-xl pb-1">Personal and Group Projects</h2>
-      <hr class="py-2" />
+      <hr class="py-1" />
       <div class="divide-y-4 divide-transparent">
         {{ range .Site.Data.cv.projects.item }}
           <div class="grid grid-cols-6 gap-x-4">
-            <span class="col-span-5"><span class="font-semibold">{{ .name }}</span>{{ if .description }}
+            <span class="col-span-5"><span class="font-semibold">{{ .name }}</span> - <a href="https://{{.link}}" class="text-blue-700 hover:underline">{{.link}}</a>{{ if .description }}
               <br /><span class="text-gray-800"
                 >{{ .description }}</span
               >{{ end }}</span>
