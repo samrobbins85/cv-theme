@@ -1,13 +1,10 @@
 <head>
-    <title>CV</title>
-{{ $styles := resources.Get "css/tailwind.css" }}
-{{ $styles = $styles | resources.PostCSS (dict "inlineImports" true) }}
+  <title>CV</title>
+  {{ $styles := resources.Get "css/tailwind.css" }}
+  {{ $styles = $styles | resources.PostCSS (dict "inlineImports" true) }}
 
-{{ if hugo.IsProduction }}
-  {{ $styles = $styles | minify }}
-{{ end }}
-<!-- Yes this is gonna cause an intentional 404, I'll try and fix it later -->
-<link href=".{{ $styles.Permalink | relURL }}" rel="stylesheet" />
-<link href="../{{ $styles.Permalink | relURL }}" rel="stylesheet" />
-
+  {{ if hugo.IsProduction }}
+    {{ $styles = $styles | minify }}
+  {{ end }}
+  <link href=".{{ $styles.Permalink | relURL }}" rel="stylesheet" />
 </head>
