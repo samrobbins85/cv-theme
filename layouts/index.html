@@ -138,11 +138,11 @@
       <div class="divide-y-4 divide-transparent">
         {{ range .Site.Data.cv.qualifications.item }}
           <div class="grid grid-cols-6 gap-x-4">
-            <span class="col-span-4"><span class="font-semibold">{{ .name }}</span>{{ if .organisation }}
+            <span class="col-span-5"><span class="font-semibold">{{ .name }}</span>{{ if .organisation }}
               <br /><span class="text-gray-800"
                 >{{ .organisation }}</span
               >{{ end }}</span>
-            <span class="text-gray-800 italic col-span-2"><span class="float-left">{{ .date }}</span></span>
+            <span class="text-gray-800 italic col-span-1"><span class="float-left">{{ .date }}</span></span>
 
           </div>
         {{ end }}
@@ -155,11 +155,11 @@
       <div class="divide-y-4 divide-transparent">
         {{ range .Site.Data.cv.experience.item }}
           <div class="grid grid-cols-6 gap-x-4">
-            <span class="col-span-4"><span class="font-semibold">{{ .position }}</span>{{ if .description }}
+            <span class="col-span-5"><span class="font-semibold">{{ .position }}</span>{{ if .description }}
               <br /><span class="text-gray-800"
                 >{{ .description }}</span
               >{{ end }}</span>
-            <span class="col-span-2 text-gray-800 italic"><span class="float-left">{{ .date }}</span></span>
+            <span class="col-span-1 text-gray-800 italic"><span class="float-left">{{ .date }}</span></span>
           </div>
         {{ end }}
       </div>
@@ -171,11 +171,11 @@
       <div class="divide-y-4 divide-transparent">
         {{ range .Site.Data.cv.projects.item }}
           <div class="grid grid-cols-6 gap-x-4">
-            <span class="col-span-4"><span class="font-semibold">{{ .name }}</span>{{ if .description }}
+            <span class="col-span-5"><span class="font-semibold">{{ .name }}</span>{{ if .description }}
               <br /><span class="text-gray-800"
                 >{{ .description }}</span
               >{{ end }}</span>
-            <span class="text-gray-800 italic col-span-2 ">{{ .date }}</span
+            <span class="text-gray-800 italic col-span-1">{{ .date }}</span
             >
 
           </div>
