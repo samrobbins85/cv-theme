@@ -22,10 +22,10 @@
       </a>
     </div>
     <h1 class="text-4xl text-center font-semibold ">Sam Robbins</h1>
-    <div class="flex justify-evenly">
+    <div class="flex justify-evenly flex-wrap gap-2">
       <a
         href="mailto:{{ .Site.Data.cv.links.email }}"
-        class="text-gray-700 underline text-sm"
+        class="text-gray-700 underline"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -46,7 +46,7 @@
       >
       <a
         href="https://{{ .Site.Data.cv.links.website }}"
-        class="text-gray-700 underline text-sm"
+        class="text-gray-700 underline"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -64,7 +64,7 @@
       >
       <a
         href="https://github.com/{{ .Site.Data.cv.links.website }}"
-        class="text-gray-700 underline text-sm"
+        class="text-gray-700 underline"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -84,7 +84,7 @@
       >
       <a
         href="https://linkedin.com/in/{{ .Site.Data.cv.links.website }}"
-        class="text-gray-700 underline text-sm"
+        class="text-gray-700 underline"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -137,13 +137,12 @@
       <hr class="py-2" />
       <div class="divide-y-4 divide-transparent">
         {{ range .Site.Data.cv.qualifications.item }}
-          <div>
-            <span class="font-semibold">{{ .name }}</span>
-            <span class="float-right text-gray-800 italic">{{ .date }}</span
-            >{{ if .organisation }}
+          <div class="grid grid-cols-6 gap-x-4">
+            <span class="col-span-4"><span class="font-semibold">{{ .name }}</span>{{ if .organisation }}
               <br /><span class="text-gray-800"
                 >{{ .organisation }}</span
-              >{{ end }}
+              >{{ end }}</span>
+            <span class="text-gray-800 italic col-span-2"><span class="float-left">{{ .date }}</span></span>
 
           </div>
         {{ end }}
@@ -155,14 +154,12 @@
       <hr class="py-2" />
       <div class="divide-y-4 divide-transparent">
         {{ range .Site.Data.cv.experience.item }}
-          <div>
-            <span class="font-semibold">{{ .position }}</span>
-            <span class="float-right text-gray-800 italic">{{ .date }}</span
-            >{{ if .description }}
+          <div class="grid grid-cols-6 gap-x-4">
+            <span class="col-span-4"><span class="font-semibold">{{ .position }}</span>{{ if .description }}
               <br /><span class="text-gray-800"
                 >{{ .description }}</span
-              >{{ end }}
-
+              >{{ end }}</span>
+            <span class="col-span-2 text-gray-800 italic"><span class="float-left">{{ .date }}</span></span>
           </div>
         {{ end }}
       </div>
@@ -173,13 +170,13 @@
       <hr class="py-2" />
       <div class="divide-y-4 divide-transparent">
         {{ range .Site.Data.cv.projects.item }}
-          <div>
-            <span class="font-semibold">{{ .name }}</span>
-            <span class="float-right text-gray-800 italic">{{ .date }}</span
-            >{{ if .description }}
+          <div class="grid grid-cols-6 gap-x-4">
+            <span class="col-span-4"><span class="font-semibold">{{ .name }}</span>{{ if .description }}
               <br /><span class="text-gray-800"
                 >{{ .description }}</span
-              >{{ end }}
+              >{{ end }}</span>
+            <span class="text-gray-800 italic col-span-2 ">{{ .date }}</span
+            >
 
           </div>
         {{ end }}
