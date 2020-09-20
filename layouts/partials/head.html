@@ -1,0 +1,11 @@
+<head>
+    <title>CV</title>
+{{ $styles := resources.Get "css/tailwind.css" }}
+{{ $styles = $styles | resources.PostCSS (dict "inlineImports" true) }}
+
+{{ if hugo.IsProduction }}
+  {{ $styles = $styles | minify }}
+{{ end }}
+
+<link href="{{ $styles.Permalink }}" rel="stylesheet" />
+</head>
