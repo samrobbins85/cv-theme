@@ -41,7 +41,9 @@
       </a>
     </div>
     {{ if .Site.Data.cv.name.enable }}
-      <h1 class="text-4xl text-center font-semibold remove">
+      <h1
+        class="text-4xl text-center font-semibold {{ if .Site.Data.cv.name.anon }}remove{{ end }}"
+      >
         {{ .Site.Data.cv.name.title }}
       </h1>
     {{ end }}
