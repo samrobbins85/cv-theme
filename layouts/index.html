@@ -132,16 +132,7 @@
         >
       </div>
     {{ end }}
-    <!-- Personal Profile -->
-    <section class="pt-4">
-      <h2 class="text-xl pb-1">Personal Profile</h2>
-      <hr class="py-2" />
-      <ul class="divide-y-2 divide-transparent">
-        {{ range .Site.Data.cv.profile.item }}
-          <li><b>{{ .point }}</b> - {{ .description }}</li>
-        {{ end }}
-      </ul>
-    </section>
+
     <!-- Skills -->
     <section class="pt-4">
       <h2 class="text-xl pb-1">Skills</h2>
@@ -173,6 +164,13 @@
             >{{ if .organisation }}
               <br /><span class="text-gray-800"
                 >{{ .organisation }}</span
+              >{{ end }}
+
+
+            {{ if .relevant_modules }}
+              <br /><span class="text-gray-800"
+                ><span class="font-medium">Relevant Modules:</span>
+                <span class="italic">{{ .relevant_modules }}</span></span
               >{{ end }}
 
           </div>
