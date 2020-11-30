@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <div class="px-4 pt-4 mx-auto lg:container">
+  <div class="px-4 mx-auto max-w-ch85 my-10 print:my-2">
     <div class="flex justify-around" id="pdf_link">
       <a class="underline text-blue-600" href="/cv.pdf">
         <svg
@@ -48,7 +48,7 @@
       </h1>
     {{ end }}
     {{ if .Site.Data.cv.links.enable }}
-      <div class="flex justify-evenly flex-wrap gap-2 remove">
+      <div class="flex justify-evenly flex-wrap gap-2 remove py-2 print:py-0">
         <a
           href="mailto:{{ .Site.Data.cv.links.email.title }}"
           class="text-gray-700 underline"
@@ -153,18 +153,17 @@
     <section class="pt-2">
       <h2 class="text-xl pb-1">Qualifications</h2>
       <hr class="py-1" />
-      <div class="divide-y-6 divide-transparent">
+      <div class="grid gap-y-4 py-4 print:py-0 print:gap-y-1">
         {{ range .Site.Data.cv.qualifications.item }}
           <div>
-            <span
-              ><span class="font-semibold">{{ .name }}</span>
-              <span class="float-right italic text-gray-800"
+            <div class="grid grid-cols-3 pb-1 sm:pb-0">
+              <span class="font-semibold col-span-2">{{ .name }}</span>
+              <span class="justify-self-end italic text-gray-800"
                 >{{ .date }}</span
-              ></span
-            >{{ if .organisation }}
-              <br /><span class="text-gray-800"
-                >{{ .organisation }}</span
-              >{{ end }}
+              >
+            </div>
+            {{ if .organisation }}
+              <span class="text-gray-800">{{ .organisation }}</span>{{ end }}
 
 
             {{ if .relevant_modules }}
@@ -181,18 +180,18 @@
     <section class="pt-2">
       <h2 class="text-xl pb-1">Experience</h2>
       <hr class="py-1" />
-      <div class="divide-y-4 divide-transparent">
+      <div class="grid gap-y-4 py-4 print:py-0 print:gap-y-1">
         {{ range .Site.Data.cv.experience.item }}
           <div>
-            <span
-              ><span class="font-semibold">{{ .position }}</span
-              ><span class="float-right italic text-gray-800">{{ .date }}</span
-              >{{ if .description }}
-                <br /><span class="text-gray-800"
-                  >{{ .description }}</span
-                >{{ end }}
+            <div class="grid grid-cols-3">
+              <span class="col-span-2 font-semibold">{{ .position }}</span
+              ><span class="justify-self-end italic text-gray-800"
+                >{{ .date }}</span
+              >
+            </div>
+            {{ if .description }}
+              <span class="text-gray-800">{{ .description }}</span>{{ end }}
 
-            </span>
           </div>
         {{ end }}
       </div>
@@ -201,30 +200,32 @@
     <section class="pt-2">
       <h2 class="text-xl pb-1">Personal and Group Projects</h2>
       <hr class="py-1" />
-      <div class="divide-y-6 divide-transparent">
+      <div class="grid gap-y-4 py-4 print:py-0 print:gap-y-1">
         {{ range .Site.Data.cv.projects.item }}
           <div>
-            <span
-              ><span class="font-semibold">{{ .name }}</span>
-              {{ if .link }}
-                <span class="remove">
-                  -
-                  <a
-                    href="https://{{ .link }}"
-                    class="text-blue-700 hover:underline"
-                    >{{ .link }}</a
-                  >
-                </span>{{ end }}
+            <div class="grid grid-cols-3 pb-1 print:pb-0">
+              <span class="col-span-2">
+                <span class="font-semibold">{{ .name }}</span>
+                {{ if .link }}
+                  <span class="remove">
+                    -
+                    <a
+                      href="https://{{ .link }}"
+                      class="text-blue-700 hover:underline"
+                      >{{ .link }}</a
+                    >
+                  </span>{{ end }}
 
+              </span>
 
-              <span class="text-gray-800 italic float-right">{{ .date }}</span>
+              <span class="text-gray-800 italic justify-self-end"
+                >{{ .date }}</span
+              >
+            </div>
 
-              {{ if .description }}
-                <br /><span class="text-gray-800"
-                  >{{ .description }}</span
-                >{{ end }}
+            {{ if .description }}
+              <span class="text-gray-800">{{ .description }}</span>{{ end }}
 
-            </span>
           </div>
         {{ end }}
       </div>
